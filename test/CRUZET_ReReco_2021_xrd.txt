@@ -1,0 +1,14 @@
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/100000/d3ad9460-36e5-42e3-ade8-62478845a3ea.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/67a99343-41ff-4740-be88-4b1e8f6e335b.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/9a12e769-2c0b-4be5-b064-4c9ea3e8f868.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/100000/56be4c53-b9a0-4171-abec-2d16e319f5e5.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/ab918f7b-7e8d-4ba2-b664-97f1db075afb.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/100000/c23d79bd-e4af-431a-bb8c-d2b87c20428e.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/6d549368-de01-4c00-b269-cf972174292e.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/40000/9468321e-421a-4eab-8bee-faa430756266.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/3140280d-aa3a-439c-b339-60fd9ac14acc.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/df43bacb-2b1e-42b8-963c-897ebf973f98.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/a00b577b-097e-4197-a859-9f3dcf54d488.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/2430000/0cb032ce-4a03-4149-8081-9e89bd57db7a.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/100000/09f2c725-4ced-46d3-8d43-30a8ccd3d466.root
+root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/40000/4fee8d57-fa0a-44db-9f5f-86474244b5ed.root

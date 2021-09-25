@@ -1,0 +1,80 @@
+# Implementation : Description of running this tool can be find  at :
+# https://twiki.cern.ch/twiki/bin/view/CMS/TkAlCosmicsRateMonitoring
+
+import FWCore.ParameterSet.Config as cms
+import os
+import sys
+
+#arglist = sys.argv
+#filename = arglist[2]
+#basename = os.path.splitext(filename)[0]
+
+process = cms.Process("Demo")
+process.load("FWCore.MessageLogger.MessageLogger_cfi")
+process.MessageLogger.cerr.FwkReport.reportEvery = 20000
+#process.MessageLogger.cerr.threshold = 'INFO'
+#process.MessageLogger.categories.append('Demo')
+#process.MessageLogger.cerr.INFO = cms.untracked.PSet( limit = cms.untracked.int32(-1) )
+
+process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(True))
+process.load('Configuration.StandardSequences.MagneticField_cff') # B-field map
+process.load('Configuration.Geometry.GeometryRecoDB_cff') # Ideal geometry and interface
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff") # Global tag
+from Configuration.AlCa.GlobalTag import GlobalTag
+#process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_data', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '103X_upgrade2018cosmics_realistic_deco_v7', '')
+#process.GlobalTag = GlobalTag(process.GlobalTag, '113X_dataRun3_Express_v4', '')
+
+process.options = cms.untracked.PSet(
+     SkipEvent= cms.untracked.vstring("ProductNotFound"), # make this exception fatal
+  )
+process.maxEvents=cms.untracked.PSet(input=cms.untracked.int32(10000))
+
+
+#//================== REFITTER FOR GETTING RESIDUAL DISTRIBUTIONS =====================//
+#import Alignment.CommonAlignment.tools.trackselectionRefitting as trackselRefit
+#process.seqTrackselRefit = trackselRefit.getSequence(process, 'ALCARECOTkAlCosmicsCTF0T',
+#                                                     isPVValidation=False, 
+#                                                     TTRHBuilder='WithAngleAndTemplate',
+#                                                     usePixelQualityFlag=True,
+#                                                     openMassWindow=False,
+#                                                     cosmicsDecoMode=True,
+#                                                     cosmicsZeroTesla=False,
+#                                                     momentumConstraint=None,
+#                                                     cosmicTrackSplitting=False,
+#                                                     use_d0cut=False)
+#//====================================================================================//
+
+
+# xxxxxxxxxxxxxxxxxx For running on root files in a text file xxxxxxxxxxxxxxxxxxxxxxxxx//
+#import FWCore.Utilities.FileUtils as FileUtils
+#filename='CRUZET_StreamExpress_2021.txt'
+#readFiles = cms.untracked.vstring()
+#readFiles = cms.untracked.vstring( FileUtils.loadListFromFile (os.environ['CMSSW_BASE']+'/src/Alignment/TrackerAlignment/test/'+str(filename)) )
+#process.source = cms.Source("PoolSource",
+#			   fileNames = readFiles,
+#			   )
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx//
+
+#===================== FOR RUNNING ON FEW FILES =======================#
+process.source = cms.Source("PoolSource",
+   fileNames = cms.untracked.vstring(
+         'root://cms-xrd-global.cern.ch//store/mc/RunIIWinter19CosmicDR/TKCosmics_0T/ALCARECO/TkAlCosmics0T-0T_103X_upgrade2018cosmics_realistic_deco_v7-v3/110000/18E5DA07-134D-B247-BFE0-1E3BB01D48EA.root'
+         'root://cms-xrd-global.cern.ch//store/data/Commissioning2018/Cosmics/ALCARECO/TkAlCosmics0T-PromptReco-v1/000/311/811/00000/FA7D17E4-0F29-E811-9B97-FA163E60E3B4.root'
+#          'root:/store/mc/Run3Winter20CosmicDR/TKCosmics_38T/ALCARECO/TkAlCosmics0T-110X_mcRun3_2021cosmics_realistic_deco_v4-v1/40000/FB02D135-6FF8-3744-B860-729A905F0397.root'
+#           'root://cms-xrd-global.cern.ch///eos/cms//store/mc/Run3Winter20CosmicDR/TKCosmics_38T/ALCARECO/TkAlCosmics0T-110X_mcRun3_2021cosmics_realistic_deco_v4-v1/40000/DB4A8FB6-099A-CF4A-9D61-BB263B24FD39.root'   
+#         'root://cms-xrd-global.cern.ch//store/data/Commissioning2021/Cosmics/ALCARECO/TkAlCosmics0T-PromptReco-v1/000/343/005/00000/b50f1524-4a24-4de8-a913-574afe1908fb.root'
+   )
+)
+#======================================================================#
+
+#process.demo = cms.EDAnalyzer('CosmicRateAnalyzer',
+#      tracksInputTag = cms.InputTag("ALCARECOTkAlCosmicsCTF0T"),
+#     tracksInputTag = cms.InputTag("FinalTrackRefitter"),
+#     CosmicTF_tracksInputTag = cms.InputTag("ALCARECOTkAlCosmicsCosmicTF0T"),
+#      muonsInputTag = cms.InputTag("muons1Leg")
+#)
+
+process.TFileService = cms.Service("TFileService", fileName = cms.string("CheckHitsCountDir.root") )
+process.load("Alignment.TrackerAlignment.cosmicRateAnalyzer_cfi")
+process.p = cms.Path(process.cosmicRateAnalyzer)
