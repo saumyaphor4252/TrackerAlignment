@@ -8,14 +8,17 @@ datasetStreamExpress2020 = {'StreamExpress_2020':'/StreamExpressCosmics/Commissi
 
 datasetsCommissioning2018 = {'Commissioning2018':'/Cosmics/Commissioning2018-TkAlCosmics0T-PromptReco-v1/ALCARECO'}
 
-datasetsCRUZET_ReReco_2021 = {'CRUZET_ReReco_2021':'/Cosmics/Commissioning2021-TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/ALCARECO'}
+datasetsCRUZET_ReReco_2021_Monday = {'CRUZET_ReReco_2021':'/Cosmics/Commissioning2021-TkAlCosmics0T-ReReco_113X_dataRun3_v2-v1/ALCARECO'}
+
+datasetsCRUZET_ReReco_2021_Friday = {'CRUZET_ReReco_2021_Friday':'/Cosmics/Commissioning2021-TkAlCosmics0T-ReReco_113X_dataRun3_v2_runsel-v1/ALCARECO'}
+
 listFiles = []
 listFilesEvents = []
 dic = {}
 #emptyFiles = 0 
 total=0
 
-for key, value in datasetsCRUZET_ReReco_2021.items():
+for key, value in datasetsCRUZET_ReReco_2021_Friday.items():
     cmd_file = "dasgoclient -query='file dataset="+ str(value) +"'"
     cmd_CheckRuns = "dasgoclient -query='run dataset="+ str(value) +" | count(run.nevents)'"
 #    cmd_CheckFiles = "dasgoclient -query='file dataset="+ str(value) +" | count(file.nevents)'"
