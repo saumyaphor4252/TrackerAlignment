@@ -1,10 +1,10 @@
 void SummaryChart_HitRate_PIXEL()
 {
 //=========Macro generated from canvas: canvas/canvas
-//=========  (Sat Sep 25 06:09:27 2021) by ROOT version 6.22/09
+//=========  (Sun Oct  3 21:35:49 2021) by ROOT version 6.22/09
    TCanvas *canvas = new TCanvas("canvas", "canvas",1,1,953,842);
    gStyle->SetOptStat(0);
-   canvas->Range(-2.042724,-0.07230295,10.65421,0.6507265);
+   canvas->Range(-2.042724,-0.05661484,10.65421,0.5095336);
    canvas->SetFillColor(0);
    canvas->SetBorderMode(0);
    canvas->SetBorderSize(2);
@@ -20,24 +20,26 @@ void SummaryChart_HitRate_PIXEL()
    canvas->SetFrameBorderMode(0);
    
    TH1F *hb_PIXEL__3 = new TH1F("hb_PIXEL__3","Rate Summary PIXEL",10,0,10);
-   hb_PIXEL__3->SetBinContent(1,0.5508796);
-   hb_PIXEL__3->SetBinContent(2,0.4710079);
-   hb_PIXEL__3->SetBinContent(3,0.0298327);
-   hb_PIXEL__3->SetBinContent(4,0.08499131);
-   hb_PIXEL__3->SetBinContent(5,0.1424714);
-   hb_PIXEL__3->SetBinContent(6,0.2137126);
-   hb_PIXEL__3->SetBinContent(7,0.07987164);
-   hb_PIXEL__3->SetBinContent(8,0.03003527);
-   hb_PIXEL__3->SetBinContent(9,0.02714253);
-   hb_PIXEL__3->SetBinContent(10,0.02269384);
+   hb_PIXEL__3->SetBinContent(1,0.4313512);
+   hb_PIXEL__3->SetBinContent(2,0.3692017);
+   hb_PIXEL__3->SetBinContent(3,0.02516257);
+   hb_PIXEL__3->SetBinContent(4,0.06750224);
+   hb_PIXEL__3->SetBinContent(5,0.1111428);
+   hb_PIXEL__3->SetBinContent(6,0.165394);
+   hb_PIXEL__3->SetBinContent(7,0.06214949);
+   hb_PIXEL__3->SetBinContent(8,0.02330826);
+   hb_PIXEL__3->SetBinContent(9,0.02117807);
+   hb_PIXEL__3->SetBinContent(10,0.01766316);
    hb_PIXEL__3->SetBarOffset(0.25);
    hb_PIXEL__3->SetBarWidth(0.6);
    hb_PIXEL__3->SetEntries(10);
    hb_PIXEL__3->SetStats(0);
-   hb_PIXEL__3->SetFillColor(6);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#0000ff");
+   hb_PIXEL__3->SetFillColor(ci);
+
    ci = TColor::GetColor("#000099");
    hb_PIXEL__3->SetLineColor(ci);
    hb_PIXEL__3->GetXaxis()->SetBinLabel(1,"PIXEL");

@@ -12,13 +12,15 @@ datasetsCRUZET_ReReco_2021_Monday = {'CRUZET_ReReco_2021':'/Cosmics/Commissionin
 
 datasetsCRUZET_ReReco_2021_Friday = {'CRUZET_ReReco_2021_Friday':'/Cosmics/Commissioning2021-TkAlCosmics0T-ReReco_113X_dataRun3_v2_runsel-v1/ALCARECO'}
 
+dataset_CRAFT_18Oct21 = {'CRAFT_18_Oct21':'/StreamExpressCosmics/Commissioning2021-TkAlCosmics0T-Express-v1/ALCARECO'}
+
 listFiles = []
 listFilesEvents = []
 dic = {}
 #emptyFiles = 0 
 total=0
 
-for key, value in datasetsCRUZET_ReReco_2021_Friday.items():
+for key, value in dataset_CRAFT_18Oct21.items():
     cmd_file = "dasgoclient -query='file dataset="+ str(value) +"'"
     cmd_CheckRuns = "dasgoclient -query='run dataset="+ str(value) +" | count(run.nevents)'"
 #    cmd_CheckFiles = "dasgoclient -query='file dataset="+ str(value) +" | count(file.nevents)'"

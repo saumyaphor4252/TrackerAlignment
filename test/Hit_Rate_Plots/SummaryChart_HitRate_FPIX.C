@@ -1,10 +1,10 @@
 void SummaryChart_HitRate_FPIX()
 {
 //=========Macro generated from canvas: canvas/canvas
-//=========  (Sat Sep 25 06:09:27 2021) by ROOT version 6.22/09
+//=========  (Sun Oct  3 21:35:49 2021) by ROOT version 6.22/09
    TCanvas *canvas = new TCanvas("canvas", "canvas",1,1,953,842);
    gStyle->SetOptStat(0);
-   canvas->Range(-2.246996,-0.07230295,11.71963,0.6507265);
+   canvas->Range(-2.246996,-0.05661484,11.71963,0.5095336);
    canvas->SetFillColor(0);
    canvas->SetBorderMode(0);
    canvas->SetBorderSize(2);
@@ -20,25 +20,27 @@ void SummaryChart_HitRate_FPIX()
    canvas->SetFrameBorderMode(0);
    
    TH1F *hb_FPIX__2 = new TH1F("hb_FPIX__2","Rate Summary FPIX",11,0,11);
-   hb_FPIX__2->SetBinContent(1,0.5508796);
-   hb_FPIX__2->SetBinContent(2,0.07987164);
-   hb_FPIX__2->SetBinContent(3,0.03003527);
-   hb_FPIX__2->SetBinContent(4,0.0141165);
-   hb_FPIX__2->SetBinContent(5,0.01591877);
-   hb_FPIX__2->SetBinContent(6,0.02714253);
-   hb_FPIX__2->SetBinContent(7,0.01282403);
-   hb_FPIX__2->SetBinContent(8,0.0143185);
-   hb_FPIX__2->SetBinContent(9,0.02269384);
-   hb_FPIX__2->SetBinContent(10,0.01070609);
-   hb_FPIX__2->SetBinContent(11,0.01198775);
+   hb_FPIX__2->SetBinContent(1,0.4313512);
+   hb_FPIX__2->SetBinContent(2,0.06214949);
+   hb_FPIX__2->SetBinContent(3,0.02330826);
+   hb_FPIX__2->SetBinContent(4,0.0110092);
+   hb_FPIX__2->SetBinContent(5,0.01229906);
+   hb_FPIX__2->SetBinContent(6,0.02117807);
+   hb_FPIX__2->SetBinContent(7,0.01006518);
+   hb_FPIX__2->SetBinContent(8,0.0111129);
+   hb_FPIX__2->SetBinContent(9,0.01766316);
+   hb_FPIX__2->SetBinContent(10,0.008322375);
+   hb_FPIX__2->SetBinContent(11,0.009340789);
    hb_FPIX__2->SetBarOffset(0.25);
    hb_FPIX__2->SetBarWidth(0.6);
    hb_FPIX__2->SetEntries(11);
    hb_FPIX__2->SetStats(0);
-   hb_FPIX__2->SetFillColor(6);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#0000ff");
+   hb_FPIX__2->SetFillColor(ci);
+
    ci = TColor::GetColor("#000099");
    hb_FPIX__2->SetLineColor(ci);
    hb_FPIX__2->GetXaxis()->SetBinLabel(1,"PIXEL");

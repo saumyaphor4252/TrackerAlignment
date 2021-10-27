@@ -1,10 +1,10 @@
 void SummaryChart_HitRate_BPIX()
 {
 //=========Macro generated from canvas: canvas/canvas
-//=========  (Sat Sep 25 06:09:27 2021) by ROOT version 6.22/09
+//=========  (Sun Oct  3 21:35:49 2021) by ROOT version 6.22/09
    TCanvas *canvas = new TCanvas("canvas", "canvas",0,0,953,866);
    gStyle->SetOptStat(0);
-   canvas->Range(-1.225634,-0.06802642,6.392523,0.6500413);
+   canvas->Range(-1.225634,-0.05112473,6.392523,0.5086539);
    canvas->SetFillColor(0);
    canvas->SetBorderMode(0);
    canvas->SetBorderSize(2);
@@ -20,20 +20,22 @@ void SummaryChart_HitRate_BPIX()
    canvas->SetFrameBorderMode(0);
    
    TH1F *hb_BPIX__1 = new TH1F("hb_BPIX__1","Rate Summary BPIX",6,0,6);
-   hb_BPIX__1->SetBinContent(1,0.5508796);
-   hb_BPIX__1->SetBinContent(2,0.4710079);
-   hb_BPIX__1->SetBinContent(3,0.0298327);
-   hb_BPIX__1->SetBinContent(4,0.08499131);
-   hb_BPIX__1->SetBinContent(5,0.1424714);
-   hb_BPIX__1->SetBinContent(6,0.2137126);
+   hb_BPIX__1->SetBinContent(1,0.4313512);
+   hb_BPIX__1->SetBinContent(2,0.3692017);
+   hb_BPIX__1->SetBinContent(3,0.02516257);
+   hb_BPIX__1->SetBinContent(4,0.06750224);
+   hb_BPIX__1->SetBinContent(5,0.1111428);
+   hb_BPIX__1->SetBinContent(6,0.165394);
    hb_BPIX__1->SetBarOffset(0.25);
    hb_BPIX__1->SetBarWidth(0.6);
    hb_BPIX__1->SetEntries(6);
    hb_BPIX__1->SetStats(0);
-   hb_BPIX__1->SetFillColor(6);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#0000ff");
+   hb_BPIX__1->SetFillColor(ci);
+
    ci = TColor::GetColor("#000099");
    hb_BPIX__1->SetLineColor(ci);
    hb_BPIX__1->GetXaxis()->SetBinLabel(1,"PIXEL");

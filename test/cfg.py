@@ -25,7 +25,7 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag, '103X_upgrade2018cosmics_realistic_deco_v7', '')
 #process.GlobalTag = GlobalTag(process.GlobalTag, '113X_dataRun3_Express_v4', '')
 #process.GlobalTag = GlobalTag(process.GlobalTag, '101X_dataRun2_Prompt_v9', '')
-process.GlobalTag = GlobalTag(process.GlobalTag, '113X_dataRun3_v2')
+process.GlobalTag = GlobalTag(process.GlobalTag, '113X_dataRun3_Express_v4')
 
 #process.options = cms.untracked.PSet(
 #     SkipEvent= cms.untracked.vstring("ProductNotFound"), # make this exception fatal
@@ -50,7 +50,7 @@ process.maxEvents=cms.untracked.PSet(input=cms.untracked.int32(-1))
 
 # xxxxxxxxxxxxxxxxxx For running on root files in a text file xxxxxxxxxxxxxxxxxxxxxxxxx//
 import FWCore.Utilities.FileUtils as FileUtils
-filename='CRUZET_ReReco_2021_xrd.txt'
+filename='CRAFT_18Oct2021.txt'
 readFiles = cms.untracked.vstring()
 readFiles = cms.untracked.vstring( FileUtils.loadListFromFile (os.environ['CMSSW_BASE']+'/src/Alignment/TrackerAlignment/test/'+str(filename)) )
 process.source = cms.Source("PoolSource",
@@ -79,6 +79,6 @@ process.source = cms.Source("PoolSource",
 #      muonsInputTag = cms.InputTag("muons1Leg")
 #)
 
-process.TFileService = cms.Service("TFileService", fileName = cms.string("CRUZET_ReReco_2021.root") )
+process.TFileService = cms.Service("TFileService", fileName = cms.string("CRAFT_18Oct2021.root") )
 process.load("Alignment.TrackerAlignment.cosmicRateAnalyzer_cfi")
 process.p = cms.Path(process.cosmicRateAnalyzer)
